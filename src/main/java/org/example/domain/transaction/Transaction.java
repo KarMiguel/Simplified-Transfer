@@ -4,6 +4,7 @@ package org.example.domain.transaction;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.domain.user.User;
 
@@ -14,8 +15,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private Double amount;
