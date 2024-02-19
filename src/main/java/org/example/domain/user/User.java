@@ -1,10 +1,8 @@
 package org.example.domain.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.example.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity(name = "users")
@@ -12,13 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String name;
+    private String firtName;
+    private String lastName;
     @Column(unique = true)
     private String document;
     @Column(unique = true)
@@ -27,4 +27,15 @@ public class User {
     private Double balance;
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserDTO data){
+        this.firtName = data.firtName();
+        this.lastName = data.lastName();
+        this.document = data.document();
+        this.email = data.email();
+        this.password = data.password();
+        this.balance = data.balance();
+        this.userType = data.userType();
+
+    }
 }
