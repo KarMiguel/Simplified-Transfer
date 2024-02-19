@@ -43,7 +43,7 @@ public class TransactionService {
 
 
         sender.setBalance(sender.getBalance() - transaction.value());;
-        receiver.setBalance(sender.getBalance() + transaction.value());
+        receiver.setBalance(receiver.getBalance() + transaction.value());
 
         this.repository.save(newTransaction);
         this.userService.saveUser(sender);
