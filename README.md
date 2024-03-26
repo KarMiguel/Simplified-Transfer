@@ -8,7 +8,7 @@ Develop a money transfer system between common users and shopkeepers, ensuring t
 - Validation of unique CPF/CNPJ and emails in the system.
 - Transfers between users with balance verification.
 - Consultation to an external authorization service before finalizing transactions.
-- Handling transfers as reversible transactions.
+- Handling transfers as reversible transactions. 
 - Notification of payment receipt to users or shopkeepers.
 
 ## API RESTful
